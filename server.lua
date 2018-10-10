@@ -65,7 +65,7 @@ AddEventHandler('jsfour-atm:insert', function(amount)
 	else
 		xPlayer.removeMoney(amount)
 		xPlayer.addAccountMoney('bank', amount)
-		TriggerClientEvent('esx:showNotification', _source, 'Du satte in ' .. amount .. '~s~ kr')
+		TriggerClientEvent('esx:showNotification', _source, 'You deposited $' .. amount .. '~s~')
 	end
 end)
 
@@ -82,7 +82,7 @@ AddEventHandler('jsfour-atm:take', function(amount)
 	else
 		xPlayer.removeAccountMoney('bank', amount)
 		xPlayer.addMoney(amount)
-		TriggerClientEvent('esx:showNotification', _source, 'Du tog ut ' .. amount .. '~s~ kr')
+		TriggerClientEvent('esx:showNotification', _source, 'You withdrew $' .. amount .. '~s~ ')
 	end
 end)
 
@@ -107,8 +107,8 @@ AddEventHandler('jsfour-atm:transfer', function(amount, receiver)
         MySQL.Async.fetchAll('SELECT firstname, lastname FROM users WHERE identifier = @identifier', {['@identifier'] = result[1].identifier},
         function (result)
           if (result[1] ~= nil) then
-            TriggerClientEvent('esx:showNotification', _source, 'Du skickade ' .. amount .. '~s~ kr till ' .. result[1].firstname .. ' ' .. result[1].lastname)
-            TriggerClientEvent('esx:showNotification', recPlayer.source, 'Du fick ' .. amount .. '~s~ kr skickade till dig från ' .. result[1].firstname .. ' ' .. result[1].lastname)
+            TriggerClientEvent('esx:showNotification', _source, 'You Sent $' .. amount .. '~s~ to ' .. result[1].firstname .. ' ' .. result[1].lastname)
+            TriggerClientEvent('esx:showNotification', recPlayer.source, 'You got $' .. amount .. '~s~ sent to you from ' .. result[1].firstname .. ' ' .. result[1].lastname)
           end
         end)
       end

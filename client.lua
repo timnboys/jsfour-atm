@@ -40,11 +40,11 @@ Citizen.CreateThread(function ()
 				time = 0
 				if ( Config.ATMS[i].b == nil ) then
 					inMarker = true
-					hintToDisplay('Tryck på ~INPUT_PICKUP~ för att använda bankomaten')
+					hintToDisplay('Press ~INPUT_PICKUP~ to use the ATM')
 				else
 					inBankMarker = true
 					type = Config.ATMS[i].t
-					hintToDisplay('Tryck på ~INPUT_PICKUP~ för att bli betjänad')
+					hintToDisplay('Press ~INPUT_PICKUP~ to be served')
 				end
 			elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), Config.ATMS[x].x, Config.ATMS[x].y, Config.ATMS[x].z, true) > 4 then
 				time = 500
@@ -77,7 +77,7 @@ Citizen.CreateThread(function ()
 						})
 					end)
 			--	else
-				--	ESX.ShowNotification('Du har inget kreditkort.. Gå till banken')
+				--	ESX.ShowNotification('You have no credit card. Go to the bank')
 				--end
 			--end)
 		end
@@ -139,5 +139,5 @@ RegisterNUICallback('error', function(data, cb)
 	SetNuiFocus(false, false)
 	open = false
 	cb('ok')
-	ESX.ShowNotification('Maskinen arbetar.. Var god vänta')
+	ESX.ShowNotification('The machine is working. Please wait')
 end)
