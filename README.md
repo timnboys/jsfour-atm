@@ -1,3 +1,23 @@
+I have translated this script with help from Jonas into English. It's a basic drag, drop and start. This script replaces 'new_banking'
+
+It adds a usable ATM to your game.
+press the card slot to insert your card then press the keypad to enter your pin code (it's 1111 for everyone).
+It takes about 5 seconds to complete 2000. 
+If you have to withdraw or deposit a larger amount of money then you can visit a bank and do so inside.
+
+### INSTALLATION
+* Drag the script in your resource folder
+* Add to your server.cfg
+* Insert the sql file into your database
+* Profit!
+
+### SCREENSHOTS
+[Screenshot] (https://imgur.com/13fUIkM)
+
+Video: https://streamable.com/b1p2d
+
+
+Swedish
 # jsfour-atm
 En realistisk bankomat
 
